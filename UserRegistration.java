@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UserRegistration <pattern, matcher, result> {
+public class UserRegistration <pattern, matcher, result>{
 
     public static void main(String[] args) {
         // write your code here
@@ -59,11 +59,10 @@ public class UserRegistration <pattern, matcher, result> {
 
 
         //validating password
-        //Rule two atleast one UpperCase
+        //Rule three atleast one numeric number
         System.out.println("Enter Password: ");
         String password = s.next();
-        pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[\\W])(?=.*[0-9])(?=.*[a-z]).{8,128}$",Pattern.CASE_INSENSITIVE);
-        matcher = pattern.matcher(password);
+        pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[\\W])(?=.*[0-9])(?=.*[a-z]).{8,128}$",Pattern.CASE_INSENSITIVE);        matcher = pattern.matcher(password);
         result = matcher.matches();
         if(result == true)
             System.out.println("Password is valid");
