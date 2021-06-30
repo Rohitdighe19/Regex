@@ -23,6 +23,8 @@ public class UserRegistration {
 
 
 
+
+
         //validating last name
         System.out.println("Enter Last Name: ");
         String lastName = s.next();
@@ -33,5 +35,17 @@ public class UserRegistration {
         else
             System.out.println("Last Name is not valid");
 
+
+
+        //validating email
+        System.out.println("Enter Email : ");
+        String Email = s.next();
+        pattern = Pattern.compile("^([A-Z|a-z|0-9](\\.|_){0,1})+[A-Z|a-z|0-9]\\@([A-Z|a-z|0-9])+((\\.){0,1}[A-Z|a-z|0-9]){2}\\.[a-z]{2,3}$",Pattern.CASE_INSENSITIVE);
+        matcher = pattern.matcher(Email);
+        result = matcher.matches();
+        if(result == true)
+            System.out.println("Email is valid");
+        else
+            System.out.println("Email is not valid");
         }
 }
